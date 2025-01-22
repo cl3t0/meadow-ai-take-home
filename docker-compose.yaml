@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  postgres1:
+    image: postgres:latest
+    container_name: postgres1
+    environment:
+      POSTGRES_USER: ${DB1_USER}
+      POSTGRES_PASSWORD: ${DB1_PASSWORD}
+      POSTGRES_DB: ${DB1_NAME}
+    ports:
+      - "${DB1_PORT}:5432"
+    volumes:
+      - postgres1_data:/var/lib/postgresql/data
+
+  postgres2:
+    image: postgres:latest
+    container_name: postgres2
+    environment:
+      POSTGRES_USER: ${DB2_USER}
+      POSTGRES_PASSWORD: ${DB2_PASSWORD}
+      POSTGRES_DB: ${DB2_NAME}
+    ports:
+      - "${DB2_PORT}:5432"
+    volumes:
+      - postgres2_data:/var/lib/postgresql/data
+
+volumes:
+  postgres1_data:
+  postgres2_data:
