@@ -66,3 +66,17 @@ python job.py
 ```
 
 Note: Make sure you are inside your Python environment.
+
+## How to test
+
+The job logic is being tested using `pytest` with the `syrupy` plugin. To run the tests make sure you followed all instructions from [here](#create-your-python-environment). Then, run the following command:
+
+```bash
+pytest
+```
+
+It'll check the output of the job based on the snapshot created by the `syrupy` plugin. If you want to change any part of the logic, you can run the following command to update the snapshot:
+
+```bash
+pytest --snapshot-update
+```

@@ -1,3 +1,6 @@
 pyspark==3.5.4
 pyspark-stubs==3.0.0.post3
 python-dotenv==1.0.1
+pydantic==2.10.6
+pytest==8.3.4
+syrupy==4.8.1
